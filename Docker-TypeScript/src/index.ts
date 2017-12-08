@@ -16,7 +16,6 @@ const injector = ReflectiveInjector.resolveAndCreate([
 
 
 let app = injector.get(App) as App;
-
 const port = process.env.PORT || 3000
 app.init(port);
 

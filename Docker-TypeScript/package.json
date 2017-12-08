@@ -15,6 +15,7 @@
     "@types/request": "^2.0.8",
     "jasmine-ts-async": "^1.0.0",
     "nodemon": "^1.11.0",
+    "reflect-metadata": "^0.1.10",
     "request": "^2.83.0",
     "request-promise": "^4.2.2",
     "typescript": "^2.3.2"
