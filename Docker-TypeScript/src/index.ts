@@ -1,15 +1,22 @@
 import * as http from 'http';
+import * as express from 'express'
+import 'reflect-metadata';
 
-let reqCnt = 1;
 
-http.createServer((req, res) => {
+import { ServiceTest } from './ServiceTest'
+import { ReflectiveInjector, Injectable, Injector } from 'injection-js';
 
-  const message = `Request Count: ${reqCnt}`;
 
-  res.writeHead(200, { 'Content-Type': 'text/html' });
-  res.end(`<html><head><meta http-equiv="refresh" content="2"></head><body>${message}</body></html>`);
+import { App } from './App'
 
-  console.log("handled request: " + reqCnt++);
-}).listen(3000);
+const injector = ReflectiveInjector.resolveAndCreate([  
+    ServiceTest,
+    App
+]);
 
-console.log('server running on port 3000');
+
+let app = injector.get(App) as App;
+
+const port = process.env.PORT || 3000
+app.init(port);
+
