@@ -1,13 +1,11 @@
 import {} from 'jasmine';
 import 'reflect-metadata';
+import { ReflectiveInjector } from 'injection-js';
 
 import { ServiceTest } from '../ServiceTest'
-import { ReflectiveInjector, Injectable, Injector } from 'injection-js';
 import { App } from '../App'
-var request = require("request");
-var rp = require('request-promise');
 
-import {$it, $beforeAll, $beforeEach, $afterEach, $afterAll} from 'jasmine-ts-async';
+import * as request from 'request';
 
 
 
@@ -21,13 +19,12 @@ describe("Hello World Server", function() {
         
 
         injector = ReflectiveInjector.resolveAndCreate([  
-            { provide: ServiceTest, useValue: { getText :  function(): string { return "mockData" }} },
+            { provide: ServiceTest, useValue: { getText :  () : string => { return "mockData" }} },
             App
         ]);
         
         app = injector.get(App) as App;    
-        const port = process.env.PORT || 3000
-        app.init(port);
+        app.init(3000);
  
 
       });

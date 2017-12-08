@@ -4,7 +4,7 @@ import 'reflect-metadata';
 
 
 import { ServiceTest } from './ServiceTest'
-import { ReflectiveInjector, Injectable, Injector } from 'injection-js';
+import { ReflectiveInjector } from 'injection-js';
 
 
 import { App } from './App'
@@ -16,6 +16,5 @@ const injector = ReflectiveInjector.resolveAndCreate([
 
 
 let app = injector.get(App) as App;
-const port = process.env.PORT || 3000
-app.init(port);
+app.init(3000);
 
