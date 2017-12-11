@@ -2,8 +2,8 @@
   "name": "server",
   "version": "0.0.0",
   "scripts": {
-    "postinstall": "tsc -p ./src --emitDecoratorMetadat",
-    "watch": "tsc -w -p ./src --emitDecoratorMetadat",
+    "postinstall": "tsc -p ./src --emitDecoratorMetadate",
+    "watch": "tsc -w -p ./src --emitDecoratorMetadate",
     "debug": "nodemon --watch ./src --inspect=0.0.0.0:5858 --nolazy ./dist/index.js",
     "docker-debug": "docker-compose up",
     "start": "node ./dist ./dist/index.js",
