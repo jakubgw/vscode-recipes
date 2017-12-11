@@ -7,6 +7,23 @@
     {
       "type": "node",
       "request": "launch",
+      "name": "Jasmine Tests",
+      "program": "${workspaceFolder}/node_modules/jasmine/bin/jasmine.js",
+      "args": [
+        "./dist/spec/helloworld.spec.js"
+      ],    
+      "env": {
+        "NODE_ENV": "development"
+      },
+      "internalConsoleOptions": "openOnSessionStart",      
+      "sourceMaps": true,  
+       "outFiles": [
+        "${workspaceRoot}/dist/**/*.js"
+      ],
+    },
+    {
+      "type": "node",
+      "request": "launch",
       "name": "Launch Program",
       "program": "${workspaceFolder}/src/index.ts",
       "outFiles": [

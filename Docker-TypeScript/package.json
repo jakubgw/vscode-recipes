@@ -6,14 +6,13 @@
     "watch": "tsc -w -p ./src",
     "debug": "nodemon --watch ./src --inspect=0.0.0.0:5858 --nolazy ./dist/index.js",
     "docker-debug": "docker-compose up",
-    "start": "node ./dist ./dist/index.js",
-    "test": "./node_modules/.bin/jasmine-node spec"
+    "start": "node ./dist ./dist/index.js"
   },
   "devDependencies": {
     "@types/jasmine": "^2.8.2",
     "@types/node": "^6.0.50",
     "@types/request": "^2.0.8",
-    "jasmine-ts-async": "^1.0.0",
+    "jasmine": "^2.8.0",
     "nodemon": "^1.11.0",
     "reflect-metadata": "^0.1.10",
     "request": "^2.83.0",
@@ -24,7 +23,6 @@
   "dependencies": {
     "@types/request": "^2.0.8",
     "express": "^4.16.2",
-    "injection-js": "^2.2.1",
-    "jasmine-node": "^1.14.5"
+    "injection-js": "^2.2.1"
   }
 }

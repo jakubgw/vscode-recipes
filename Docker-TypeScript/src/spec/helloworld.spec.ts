@@ -1,7 +1,6 @@
+import { ReflectiveInjector } from 'injection-js';
 import {} from 'jasmine';
 import 'reflect-metadata';
-import { ReflectiveInjector } from 'injection-js';
-
 import { ServiceTest } from '../ServiceTest'
 import { App } from '../App'
 
@@ -17,6 +16,7 @@ describe("Hello World Server", function() {
 
       beforeEach(() => {
         
+        jasmine.DEFAULT_TIMEOUT_INTERVAL = 100000;
 
         injector = ReflectiveInjector.resolveAndCreate([  
             { provide: ServiceTest, useValue: { getText :  () : string => { return "mockData" }} },
