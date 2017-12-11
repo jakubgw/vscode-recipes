@@ -16,7 +16,6 @@ describe("Hello World Server", function() {
 
       beforeEach(() => {
         
-        jasmine.DEFAULT_TIMEOUT_INTERVAL = 100000;
 
         injector = ReflectiveInjector.resolveAndCreate([  
             { provide: ServiceTest, useValue: { getText :  () : string => { return "mockData" }} },

@@ -6,7 +6,8 @@
     "watch": "tsc -w -p ./src",
     "debug": "nodemon --watch ./src --inspect=0.0.0.0:5858 --nolazy ./dist/index.js",
     "docker-debug": "docker-compose up",
-    "start": "node ./dist ./dist/index.js"
+    "start": "node ./dist ./dist/index.js",
+    "test" : "npm run postinstall & node ./runTests.js"
   },
   "devDependencies": {
     "@types/jasmine": "^2.8.2",
