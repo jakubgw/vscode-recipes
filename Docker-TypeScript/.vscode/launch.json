@@ -8,6 +8,7 @@
       "type": "node",
       "request": "launch",
       "name": "Jasmine Tests",
+      "preLaunchTask": "tsc-watch",
       "program": "${workspaceFolder}/runTests.js",     
       "env": {
         "NODE_ENV": "development"
